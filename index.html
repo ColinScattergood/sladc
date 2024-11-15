@@ -5,19 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scattered Labs</title>
     <style>
+        /* Define CSS variables for colors */
+        :root {
+            --background-color: #ffffff;
+            --text-color: #333;
+            --secondary-text-color: #666;
+            --link-color: #0066cc;
+            --header-color: #444;
+            --font-family-main: Arial, sans-serif;
+            --font-family-alt: 'Courier New', Courier, monospace;
+            --font-family-digital: 'Lucida Console', Monaco, monospace;
+        }
+
+        /* Dark mode variables */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --background-color: #121212;
+                --text-color: #e0e0e0;
+                --secondary-text-color: #bbbbbb;
+                --link-color: #66ccff;
+                --header-color: #eeeeee;
+            }
+        }
+
+        /* General body styling */
+        body {
+            font-family: var(--font-family-main);
+            text-align: center;
+            line-height: 1.6;
+            position: relative;
+            background-color: var(--background-color);
+            color: var(--text-color);
+        }
+
         /* Container to limit text width on large screens */
         .container {
             max-width: 900px;
             margin: 0 auto;
             padding: 20px;
-        }
-
-        /* General body styling */
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            line-height: 1.6;
-            position: relative;
         }
 
         /* Logo styling */
@@ -32,15 +57,34 @@
         /* Header styling */
         h1 {
             font-size: 3em;
-            color: #333;
-            font-family: 'Courier New', Courier, monospace;
+            font-family: var(--font-family-alt);
             margin-top: 50px;
+            color: var(--header-color);
+        }
+
+        /* Tagline and section headers */
+        h2 {
+            font-size: 1.8em;
+            margin-top: 40px;
+            font-family: var(--font-family-digital);
+            color: var(--header-color);
+        }
+
+        /* Paragraph text */
+        p {
+            font-size: 1.2em;
+            font-family: var(--font-family-alt);
+            color: var(--text-color);
         }
 
         /* Styling for links */
         a {
-            color: #0066cc;
+            color: var(--link-color);
             text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive styling for smaller screens */
@@ -72,32 +116,28 @@
         <h1>Scattered Labs</h1>
 
         <!-- Tagline -->
-        <p style="font-size: 1.5em; color: #666; font-family: 'Lucida Console', Monaco, monospace; font-weight: bold;">
+        <p style="font-size: 1.5em; font-family: var(--font-family-digital); font-weight: bold;">
             Connecting Ideas, Creating Impact
         </p>
 
         <!-- About Section -->
-        <p style="font-size: 1.2em; color: #444; margin-top: 30px; font-family: 'Courier New', Courier, monospace;">
+        <p>
             Welcome to Scattered Labs, where we turn bold ideas into meaningful digital experiences.
             Our team gathers inspiration from everywhere, bringing together creativity, technology,
             and purpose to craft apps that matter.
         </p>
 
         <!-- What We Do Section -->
-        <h2 style="font-size: 1.8em; color: #333; margin-top: 40px; font-family: 'Lucida Console', Monaco, monospace;">
-            What We Do
-        </h2>
-        <p style="font-size: 1.2em; color: #444; font-family: 'Courier New', Courier, monospace;">
+        <h2>What We Do</h2>
+        <p>
             At Scattered Labs, we specialize in app development that connects, inspires, and enhances
             everyday life. From concept to creation, we blend innovative ideas with seamless user experiences,
             building apps that resonate with users and deliver value.
         </p>
 
         <!-- Contact Section -->
-        <h2 style="font-size: 1.8em; color: #333; margin-top: 40px; font-family: 'Lucida Console', Monaco, monospace;">
-            Get in Touch
-        </h2>
-        <p style="font-size: 1.2em; color: #444; font-family: 'Courier New', Courier, monospace;">
+        <h2>Get in Touch</h2>
+        <p>
             Interested in collaborating or learning more? Email us at 
             <a href="mailto:colin@scatteredlabsapps.com">colin@scatteredlabsapps.com</a>.
         </p>
