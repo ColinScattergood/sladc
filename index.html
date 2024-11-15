@@ -5,19 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scattered Labs</title>
     <style>
-        /* Add a max-width to limit text width on large screens */
+        /* Container to limit text width on large screens */
         .container {
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* General styling */
+        /* General body styling */
         body {
             font-family: Arial, sans-serif;
             text-align: center;
             line-height: 1.6;
             position: relative;
+        }
+
+        /* Logo styling */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            height: auto;
+        }
+
+        /* Header styling */
+        h1 {
+            font-size: 3em;
+            color: #333;
+            font-family: 'Courier New', Courier, monospace;
+            margin-top: 60px;
         }
 
         /* Styling for links */
@@ -26,8 +43,19 @@
             text-decoration: none;
         }
 
-        /* Responsive styling */
+        /* Responsive styling for smaller screens */
         @media (max-width: 600px) {
+            .logo {
+                position: static;
+                margin: 0 auto 20px;
+                display: block;
+            }
+
+            h1 {
+                margin-top: 20px;
+                font-size: 2.5em;
+            }
+
             .container {
                 padding: 10px;
             }
@@ -35,25 +63,27 @@
     </style>
 </head>
 <body>
-    <img src="logo.png" alt="Scattered Labs Logo" style="position: absolute; top: 20px; left: 20px; width: 100px; height: auto;">
-<br>
-    <div class="container">
-        <!-- Header with company name in a digital-looking font -->
-        <h1 style="font-size: 3em; color: #333; font-family: 'Courier New', Courier, monospace;">Scattered Labs</h1>
+    <!-- Logo -->
+    <img src="logo.png" alt="Scattered Labs Logo" class="logo">
 
-        <!-- Tagline in a bold digital style -->
+    <!-- Main content container -->
+    <div class="container">
+        <!-- Header with company name -->
+        <h1>Scattered Labs</h1>
+
+        <!-- Tagline -->
         <p style="font-size: 1.5em; color: #666; font-family: 'Lucida Console', Monaco, monospace; font-weight: bold;">
             Connecting Ideas, Creating Impact
         </p>
 
-        <!-- About Section with a tech-inspired font -->
+        <!-- About Section -->
         <p style="font-size: 1.2em; color: #444; margin-top: 30px; font-family: 'Courier New', Courier, monospace;">
             Welcome to Scattered Labs, where we turn bold ideas into meaningful digital experiences.
             Our team gathers inspiration from everywhere, bringing together creativity, technology,
             and purpose to craft apps that matter.
         </p>
 
-        <!-- What We Do Section in the same digital font -->
+        <!-- What We Do Section -->
         <h2 style="font-size: 1.8em; color: #333; margin-top: 40px; font-family: 'Lucida Console', Monaco, monospace;">
             What We Do
         </h2>
@@ -63,7 +93,7 @@
             building apps that resonate with users and deliver value.
         </p>
 
-        <!-- Contact Section with tech-inspired font -->
+        <!-- Contact Section -->
         <h2 style="font-size: 1.8em; color: #333; margin-top: 40px; font-family: 'Lucida Console', Monaco, monospace;">
             Get in Touch
         </h2>
