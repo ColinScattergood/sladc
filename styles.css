@@ -1,0 +1,99 @@
+/* Define CSS variables for colors */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333;
+    --secondary-text-color: #666;
+    --link-color: #0066cc;
+    --header-color: #444;
+    --font-family-main: Arial, sans-serif;
+    --font-family-alt: 'Courier New', Courier, monospace;
+    --font-family-digital: 'Lucida Console', Monaco, monospace;
+}
+
+/* Dark mode variables */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background-color: #121212;
+        --text-color: #e0e0e0;
+        --secondary-text-color: #bbbbbb;
+        --link-color: #66ccff;
+        --header-color: #eeeeee;
+    }
+}
+
+/* General body styling */
+body {
+    font-family: var(--font-family-main);
+    text-align: center;
+    line-height: 1.6;
+    position: relative;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Container to limit text width on large screens */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Logo styling */
+.logo {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    width: 100px;
+    height: auto;
+}
+
+/* Header styling */
+h1 {
+    font-size: 3em;
+    font-family: var(--font-family-alt);
+    margin-top: 50px;
+    color: var(--header-color);
+}
+
+/* Tagline and section headers */
+h2 {
+    font-size: 1.8em;
+    margin-top: 40px;
+    font-family: var(--font-family-digital);
+    color: var(--header-color);
+}
+
+/* Paragraph text */
+p {
+    font-size: 1.2em;
+    font-family: var(--font-family-alt);
+    color: var(--text-color);
+}
+
+/* Styling for links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 600px) {
+    .logo {
+        position: static;
+        margin: 0 auto 10px;
+        display: block;
+    }
+
+    h1 {
+        margin-top: 0px;
+        font-size: 2.5em;
+    }
+
+    .container {
+        padding: 5px;
+    }
+}
