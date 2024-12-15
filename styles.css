@@ -80,6 +80,17 @@ a:hover {
     text-decoration: underline;
 }
 
+/* Remove bullets and fix spacing for unordered lists */
+ul {
+    list-style-type: none; /* Removes the bullets */
+    padding: 0; /* Removes default padding */
+    margin: 20px 0; /* Optional: Adds spacing around the list */
+}
+
+ul li {
+    margin: 10px 0; /* Optional: Adds spacing between list items */
+}
+
 /* Responsive styling for smaller screens */
 @media (max-width: 600px) {
     .logo {
