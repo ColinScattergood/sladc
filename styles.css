@@ -20,6 +20,17 @@ body {
     text-align: center;
 }
 
+/* Global Link Styles */
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 /* Header */
 .header {
     display: flex;
@@ -39,15 +50,7 @@ body {
 }
 
 .nav a {
-    color: var(--text-color);
-    text-decoration: none;
     margin: 0 15px;
-    font-weight: bold;
-}
-
-.nav a:hover {
-    text-decoration: underline;
-    color: var(--primary-color);
 }
 
 /* Hero Section */
@@ -108,16 +111,6 @@ body {
     margin-top: 0;
 }
 
-.app-card a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.app-card a:hover {
-    text-decoration: underline;
-}
-
 /* About & Contact Sections */
 .about, .contact {
     padding: 30px 20px;
@@ -133,13 +126,7 @@ footer {
 }
 
 footer a {
-    color: var(--primary-color);
     margin: 0 10px;
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
 }
 
 /* Responsive Design */
@@ -154,4 +141,4 @@ footer a:hover {
         display: inline-block;
         margin-top: 10px;
     }
-}
+} 
