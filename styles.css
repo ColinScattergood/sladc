@@ -5,6 +5,7 @@
     --primary-color: #3EB489; /* Mint Color */
     --secondary-color: #1e1e1e;
     --card-background: #1f1f1f;
+    --hero-background: #1a1a1a; /* Subtle dark background for hero */
     --font-family-main: Arial, sans-serif;
     --font-family-alt: 'Courier New', Courier, monospace;
 }
@@ -51,9 +52,10 @@ body {
 
 /* Hero Section */
 .hero {
-    background: var(--primary-color);
-    color: #121212;
+    background: var(--hero-background);
+    color: var(--text-color);
     padding: 50px 20px;
+    border-bottom: 3px solid var(--primary-color); /* Subtle mint accent */
 }
 
 .hero h1 {
