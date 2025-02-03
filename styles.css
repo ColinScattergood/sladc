@@ -57,7 +57,7 @@ a:hover {
 .hero {
     background: var(--hero-background);
     color: var(--text-color);
-    padding: 50px 20px;
+    padding: 30px 20px; /* Reduced padding to move content higher */
     border-bottom: 3px solid var(--primary-color); /* Subtle mint accent */
 }
 
