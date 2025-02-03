@@ -1,110 +1,149 @@
-/* Define CSS variables for colors */
+/* Global Styles */
 :root {
     --background-color: #ffffff;
     --text-color: #333;
-    --secondary-text-color: #666;
-    --link-color: #0066cc;
-    --header-color: #444;
+    --primary-color: #0066cc;
+    --secondary-color: #444;
     --font-family-main: Arial, sans-serif;
     --font-family-alt: 'Courier New', Courier, monospace;
-    --font-family-digital: 'Lucida Console', Monaco, monospace;
 }
 
-/* Dark mode variables */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background-color: #121212;
-        --text-color: #e0e0e0;
-        --secondary-text-color: #bbbbbb;
-        --link-color: #66ccff;
-        --header-color: #eeeeee;
-    }
-}
-
-/* General body styling */
 body {
     font-family: var(--font-family-main);
-    text-align: center;
-    line-height: 1.6;
-    position: relative;
     background-color: var(--background-color);
     color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    text-align: center;
 }
 
-/* Container to limit text width on large screens */
-.container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-/* Logo styling */
 .logo {
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    width: 100px;
+    width: 80px;
     height: auto;
 }
 
-/* Header styling */
-h1 {
-    font-size: 3em;
-    font-family: var(--font-family-alt);
-    margin-top: 50px;
-    color: var(--header-color);
-}
-
-/* Tagline and section headers */
-h2 {
-    font-size: 1.8em;
-    margin-top: 40px;
-    font-family: var(--font-family-digital);
-    color: var(--header-color);
-}
-
-/* Paragraph text */
-p {
-    font-size: 1.2em;
-    font-family: var(--font-family-alt);
-    color: var(--text-color);
-}
-
-/* Styling for links */
-a {
-    color: var(--link-color);
+.nav a {
+    color: #fff;
     text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
 }
 
-a:hover {
+.nav a:hover {
     text-decoration: underline;
 }
 
-/* Remove bullets and fix spacing for unordered lists */
-ul {
-    list-style-type: none; /* Removes the bullets */
-    padding: 0; /* Removes default padding */
-    margin: 20px 0; /* Optional: Adds spacing around the list */
+/* Hero Section */
+.hero {
+    background: var(--primary-color);
+    color: #fff;
+    padding: 50px 20px;
 }
 
-ul li {
-    margin: 10px 0; /* Optional: Adds spacing between list items */
+.hero h1 {
+    font-size: 2.5em;
+    margin: 0;
 }
 
-/* Responsive styling for smaller screens */
+.hero p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.cta-button {
+    background: #fff;
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background: #e6e6e6;
+}
+
+/* Apps Section */
+.apps {
+    padding: 40px 20px;
+}
+
+.app-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.app-card {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    background: #f9f9f9;
+}
+
+.app-card h3 {
+    margin-top: 0;
+}
+
+.app-card a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.app-card a:hover {
+    text-decoration: underline;
+}
+
+/* About & Contact Sections */
+.about, .contact {
+    padding: 30px 20px;
+    background: #f4f4f4;
+}
+
+/* Footer */
+footer {
+    background: var(--secondary-color);
+    color: #fff;
+    padding: 10px 0;
+}
+
+footer a {
+    color: #fff;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
 @media (max-width: 600px) {
-    .logo {
-        position: static;
-        margin: 0 auto 10px;
-        display: block;
+    .nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
     }
 
-    h1 {
-        margin-top: 0px;
-        font-size: 2.5em;
-    }
-
-    .container {
-        padding: 5px;
+    .cta-button {
+        display: inline-block;
+        margin-top: 10px;
     }
 }
