@@ -36,8 +36,8 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
-    background-color: var(--secondary-color);
+    padding: 5px 15px; /* Reduced padding for smaller height */
+    background-color: var(--hero-background); /* Match hero section */
     color: var(--text-color);
     position: sticky;
     top: 0;
@@ -45,12 +45,12 @@ a:hover {
 }
 
 .logo {
-    width: 80px;
+    width: 60px; /* Reduced size for smaller header */
     height: auto;
 }
 
 .nav a {
-    margin: 0 15px;
+    margin: 0 10px;
 }
 
 /* Hero Section */
@@ -141,4 +141,4 @@ footer a {
         display: inline-block;
         margin-top: 10px;
     }
-} 
+}
