@@ -4,70 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Scattered Labs</title>
-    <style>
-        :root {
-            --background-color: #ffffff;
-            --text-color: #333;
-            --header-color: #444;
-            --link-color: #0066cc;
-            --font-family-main: Arial, sans-serif;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --background-color: #121212;
-                --text-color: #e0e0e0;
-                --header-color: #eeeeee;
-                --link-color: #66ccff;
-            }
-        }
-
-        body {
-            font-family: var(--font-family-main);
-            line-height: 1.6;
-            background-color: var(--background-color);
-            color: var(--text-color);
-            margin: 0;
-            padding: 20px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .logo {
-            position: absolute;
-            top: 10px;
-            left: 20px;
-            width: 60px;
-            height: auto;
-        }
-
-        h1 {
-            text-align: center;
-            color: var(--header-color);
-        }
-
-        h2 {
-            color: var(--header-color);
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Logo linking back to the homepage -->
-    <a href="index.html">
-        <img src="logo.png" alt="Scattered Labs Logo" class="logo">
-    </a>
+    <!-- Header -->
+    <header class="header">
+        <a href="index.html">
+            <img src="logo.png" alt="Scattered Labs Logo" class="logo">
+        </a>
+        <nav class="nav">
+            <a href="index.html">Home</a>
+            <a href="apps.html">Our Apps</a>
+            <a href="mailto:colin@scatteredlabsapps.com">Contact</a>
+        </nav>
+    </header>
 
     <div class="container">
         <h1>Privacy Policy</h1>
