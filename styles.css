@@ -1,9 +1,10 @@
 /* Global Styles */
 :root {
-    --background-color: #ffffff;
-    --text-color: #333;
-    --primary-color: #0066cc;
-    --secondary-color: #444;
+    --background-color: #121212;
+    --text-color: #e0e0e0;
+    --primary-color: #3EB489; /* Mint Color */
+    --secondary-color: #1e1e1e;
+    --card-background: #1f1f1f;
     --font-family-main: Arial, sans-serif;
     --font-family-alt: 'Courier New', Courier, monospace;
 }
@@ -25,7 +26,7 @@ body {
     align-items: center;
     padding: 10px 20px;
     background-color: var(--secondary-color);
-    color: #fff;
+    color: var(--text-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -37,7 +38,7 @@ body {
 }
 
 .nav a {
-    color: #fff;
+    color: var(--text-color);
     text-decoration: none;
     margin: 0 15px;
     font-weight: bold;
@@ -45,12 +46,13 @@ body {
 
 .nav a:hover {
     text-decoration: underline;
+    color: var(--primary-color);
 }
 
 /* Hero Section */
 .hero {
     background: var(--primary-color);
-    color: #fff;
+    color: #121212;
     padding: 50px 20px;
 }
 
@@ -65,16 +67,18 @@ body {
 }
 
 .cta-button {
-    background: #fff;
+    background: var(--background-color);
     color: var(--primary-color);
     padding: 10px 20px;
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    border: 1px solid var(--primary-color);
 }
 
 .cta-button:hover {
-    background: #e6e6e6;
+    background: var(--primary-color);
+    color: #121212;
 }
 
 /* Apps Section */
@@ -91,10 +95,11 @@ body {
 }
 
 .app-card {
-    border: 1px solid #ccc;
+    border: 1px solid #333;
     padding: 20px;
     border-radius: 8px;
-    background: #f9f9f9;
+    background: var(--card-background);
+    color: var(--text-color);
 }
 
 .app-card h3 {
@@ -114,18 +119,19 @@ body {
 /* About & Contact Sections */
 .about, .contact {
     padding: 30px 20px;
-    background: #f4f4f4;
+    background: var(--secondary-color);
+    color: var(--text-color);
 }
 
 /* Footer */
 footer {
     background: var(--secondary-color);
-    color: #fff;
+    color: var(--text-color);
     padding: 10px 0;
 }
 
 footer a {
-    color: #fff;
+    color: var(--primary-color);
     margin: 0 10px;
     text-decoration: none;
 }
