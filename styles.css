@@ -8,6 +8,7 @@
     --hero-background: #1a1a1a; /* Subtle dark background for hero */
     --font-family-main: Arial, sans-serif;
     --font-family-alt: 'Courier New', Courier, monospace;
+    --heading-color: #cccccc; /* Softer color for headings */
 }
 
 body {
@@ -64,11 +65,13 @@ a:hover {
 .hero h1 {
     font-size: 2.5em;
     margin: 0;
+    color: var(--heading-color);
 }
 
 .hero p {
     font-size: 1.2em;
     margin: 10px 0;
+    color: var(--heading-color);
 }
 
 .cta-button {
@@ -109,6 +112,7 @@ a:hover {
 
 .app-card h3 {
     margin-top: 0;
+    color: var(--heading-color);
 }
 
 /* About & Contact Sections */
@@ -127,7 +131,7 @@ a:hover {
 }
 
 h1, h2, h3 {
-    color: var(--primary-color);
+    color: var(--heading-color);
     margin-bottom: 10px;
 }
 
