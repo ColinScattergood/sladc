@@ -1,3 +1,4 @@
+
 /* Global Styles */
 :root {
     --background-color: #121212;
@@ -91,7 +92,11 @@ a:hover {
 
 /* Apps Section */
 .apps {
-    padding: 40px 20px;
+    padding: 50px 20px; /* Increased top padding for more spacing */
+}
+
+.apps h2 {
+    margin-bottom: 40px; /* Added more spacing between heading and cards */
 }
 
 .app-grid {
