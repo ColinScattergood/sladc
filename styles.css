@@ -304,13 +304,13 @@ footer a:hover {
     max-width: auto; /* Prevents it from being too wide on large screens */
     margin: 0 auto; /* Centers the swiper container */
     padding: 20px 0;
-    overflow: hidden; /* Ensures smooth scrolling */
+    overflow-x: auto; /* Allows horizontal scrolling */
+    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on mobile */
 }
 
 .swiper-wrapper {
-    display: flex;
-    justify-content: flex-start; /* Centers slides when they fit in the viewport */
-    align-items: center;
+    justify-content: flex-start;
+    align-items: stretch; /* Ensures uniform height */
 }
 
 .swiper-slide {
