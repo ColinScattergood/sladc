@@ -90,12 +90,10 @@
 
 <script>
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 'auto', /* Expands to fit available space */
+        slidesPerView: 'auto',
         spaceBetween: 20,
-        loop: true, /* Ensures infinite scrolling */
-        loopedSlides: 4, /* Forces enough cloned slides for seamless looping */
-        centeredSlides: false, /* Aligns slides naturally */
-        freeMode: false, /* Stops auto-movement */
+        centeredSlides: false,
+        freeMode: false,
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -109,11 +107,16 @@
             sensitivity: 1,
         },
         breakpoints: {
+            // Small screens: Enable looping
             640: {
                 slidesPerView: 'auto',
+                loop: true, 
+                loopedSlides: 3, // Adjust for smooth looping
             },
+            // Large screens: Disable looping
             1024: {
                 slidesPerView: 'auto',
+                loop: false, 
             }
         }
     });
