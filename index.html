@@ -89,48 +89,50 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-    var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 'auto',
-        spaceBetween: 20,
-        centeredSlides: false,
-        freeMode: false,
-        initialSlide: 0, // Ensure the first slide is visible on load
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-        mousewheel: {
-            forceToAxis: false,
-            sensitivity: 1,
-        },
-        breakpoints: {
-            // Small screens: Enable looping
-            640: {
-                slidesPerView: 'auto',
-                loop: true, 
-                loopedSlides: 3, // Adjust for smooth looping
+    var swiper;
+
+    function initSwiper() {
+        // Destroy previous instance if it exists (prevents duplicate issues)
+        if (swiper) swiper.destroy(true, true);
+
+        swiper = new Swiper('.swiper-container', {
+            slidesPerView: 'auto',
+            spaceBetween: 20,
+            centeredSlides: false,
+            freeMode: false,
+            initialSlide: 0, // Ensure the first slide is visible on load
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
             },
-            // Large screens: Disable looping
-            1024: {
-                slidesPerView: 'auto',
-                loop: false, 
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            mousewheel: {
+                forceToAxis: false,
+                sensitivity: 1,
+            },
+            loop: window.innerWidth < 1024, // Enable loop only on small screens
+            loopedSlides: window.innerWidth < 1024 ? 3 : 0, // Ensure enough slides for looping
+            on: {
+                init: function () {
+                    this.slideTo(0, 0); // Force move to first slide on initialization
+                },
             }
-        }
-    });
+        });
+    }
 
     // Ensure the page starts at the top when loaded
     window.onload = function () {
         window.scrollTo(0, 0);
+        initSwiper(); // Initialize Swiper on page load
     };
 
-    // Reset scroll position and Swiper on window resize
+    // Reset scroll position and Swiper when resizing
     window.addEventListener('resize', function () {
         window.scrollTo(0, 0);
-        if (swiper) swiper.slideTo(0, 0);
+        initSwiper(); // Reinitialize Swiper on resize
     });
 </script>
 </body>
