@@ -90,11 +90,17 @@
 
 <script>
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 'auto',
+        slidesPerView: 'auto', /* Keeps slides dynamic */
         spaceBetween: 20,
-        loop: true,
-        loopAdditionalSlides: 2, /* Adds extra cloned slides for smooth looping */
-        centeredSlides: true, /* Keeps slides evenly distributed */
+        loop: true, /* Enables infinite scrolling */
+        loopedSlides: 6, /* Ensures enough slides are cloned */
+        centeredSlides: true, /* Keeps the slides centered properly */
+        freeMode: true, /* Allows smooth, natural scrolling */
+        speed: 5000, /* Adjusts scroll speed */
+        autoplay: {
+            delay: 0, /* Keeps it continuously moving */
+            disableOnInteraction: false, /* Keeps scrolling even after user interaction */
+        },
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
