@@ -309,21 +309,22 @@ footer a:hover {
 }
 
 .swiper-wrapper {
+    display: flex !important; /* Ensures slides are in a row */
+    flex-wrap: nowrap !important; /* Prevents stacking */
+    white-space: nowrap; /* Ensures slides do not wrap */
     justify-content: flex-start;
-    align-items: stretch; /* Ensures uniform height */
+    align-items: stretch;
 }
 
 .swiper-slide {
-    flex-shrink: 0;
-    width: 300px !important; /* Force fixed width */
-    max-width: 300px; /* Ensures it doesn’t expand */
-    height: 350px; /* Set a consistent height for all cards */
-    display: flex;
+    display: flex !important; /* Ensures slides are treated as flex items */
     flex-direction: column;
-    justify-content: space-between; /* Distribute content evenly */
-    text-align: center;
-    background: #1a1a1a;
-    padding: 12px;
+    flex-shrink: 0;
+    width: auto;
+    min-width: 80vw; /* Ensures at least one slide fits the screen on mobile */
+    max-width: 300px; /* Ensures slides don’t become too wide */
+    padding: 10px; /* Adds spacing inside each card */
+    background: var(--card-background);
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     transition: transform 0.3s ease-in-out;
