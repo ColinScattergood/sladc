@@ -5,11 +5,10 @@
     --primary-color: #3EB489; /* Mint Color */
     --secondary-color: #1e1e1e;
     --card-background: #1f1f1f;
-    --hero-background: #1a1a1a; /* Subtle dark background for hero */
+    --hero-background: #1a1a1a;
     --font-family-main: Arial, sans-serif;
-    --font-family-alt: 'Courier New', Courier, monospace;
-    --heading-color: #cccccc; /* Softer color for headings */
-    --border-color: rgba(255, 255, 255, 0.1); /* Softer border color */
+    --heading-color: #cccccc;
+    --border-color: rgba(255, 255, 255, 0.1);
 }
 
 body {
@@ -18,8 +17,8 @@ body {
     color: var(--text-color);
     margin: 0;
     padding: 0;
-    line-height: 1.6;
     text-align: center;
+    line-height: 1.6;
 }
 
 /* Global Link Styles */
@@ -38,9 +37,8 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 15px;
+    padding: 10px 20px;
     background-color: var(--hero-background);
-    color: var(--text-color);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -48,49 +46,95 @@ a:hover {
 
 .logo {
     width: 60px;
-    height: auto;
 }
 
+/* Navigation */
 .nav a {
+    color: var(--text-color);
     margin: 0 10px;
 }
 
 /* Hero Section */
 .hero {
     background: var(--hero-background);
-    color: var(--text-color);
-    padding: 30px 20px 60px;
-    border-bottom: 3px solid var(--primary-color);
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .hero h1 {
     font-size: 2.5em;
-    margin: 0;
-    color: var(--heading-color);
+    margin-bottom: 10px;
+    color: var(--text-color);
 }
 
 .hero p {
     font-size: 1.2em;
-    margin: 10px 0;
-    color: var(--heading-color);
+    margin-bottom: 20px;
 }
 
-.cta-button {
-    background: var(--background-color);
-    color: var(--primary-color);
-    padding: 10px 20px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px solid var(--primary-color);
+.hero-logo {
+    width: 120px;
+    margin: 20px 0;
 }
 
-.cta-button:hover {
-    background: var(--primary-color);
-    color: #121212;
+.app-store-button {
+    width: 150px;
+    margin-top: 10px;
 }
 
-/* Apps Section */
+/* Features Section */
+.features {
+    padding: 50px 20px;
+}
+
+.features h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.feature {
+    background: var(--secondary-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease-in-out;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+.feature h3 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+/* Call to Action */
+.cta {
+    background: var(--hero-background);
+    padding: 40px 20px;
+}
+
+.cta h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.cta p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* App Section */
 .apps {
     padding: 50px 20px;
 }
@@ -106,7 +150,7 @@ a:hover {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
@@ -122,6 +166,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between; /* Ensures even spacing */
+    min-height: 340px; /* Standardizes height */
 }
 
 .app-card:hover {
@@ -144,115 +190,72 @@ a:hover {
     object-fit: contain;
 }
 
+/* Special VoteMapper Styling */
+.votemapper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* App Store Button */
+.app-store-button {
+    width: 140px;
+    display: block;
+    margin: 10px auto;
+}
+
 /* App Buttons */
 .app-button {
     display: inline-block;
     background: var(--primary-color);
     color: var(--background-color);
-    padding: 10px 15px;
+    padding: 12px 18px;
     border-radius: 6px;
     font-weight: bold;
     text-decoration: none;
     transition: 0.3s ease-in-out;
-    margin-top: 10px;
+    margin-top: auto;
 }
 
 .app-button:hover {
     background: #2e8b6d;
 }
 
-/* Special VoteMapper Styling */
-.votemapper-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
-
-
-/* App Store Button */
-.app-store-button {
-    width: 140px;
-    margin-top: 10px;
-}
-
-/* About & Contact Sections */
-.about, .contact {
-    padding: 30px 20px;
-    background: var(--secondary-color);
-    color: var(--text-color);
-}
-
-/* Privacy Policy Styling */
-.container {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    text-align: left;
-}
-
-h1, h2, h3 {
-    color: var(--heading-color);
-    margin-bottom: 10px;
-}
-
-h1 {
-    text-align: center;
-    font-size: 2.5em;
-    margin-top: 20px;
-}
-
-h2 {
-    font-size: 1.8em;
-    margin-top: 30px;
-}
-
-h3 {
-    font-size: 1.5em;
-    margin-top: 20px;
-}
-
-ul {
-    list-style-type: disc;
-    margin: 10px 0 10px 20px;
-    padding-left: 20px;
-}
-
-li {
-    margin-bottom: 5px;
-}
-
-p {
-    margin: 10px 0;
-}
-
-address {
-    font-style: normal;
-    margin-top: 20px;
-}
-
 /* Footer */
 footer {
     background: var(--secondary-color);
-    color: var(--text-color);
     padding: 10px 0;
+    color: var(--text-color);
 }
 
 footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
     margin: 0 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-    .nav {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
+    .feature-grid {
+        grid-template-columns: 1fr;
     }
 
-    .cta-button {
-        display: inline-block;
-        margin-top: 10px;
+    .hero h1 {
+        font-size: 2em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
+    .cta h2 {
+        font-size: 1.8em;
     }
 
     .app-grid {
