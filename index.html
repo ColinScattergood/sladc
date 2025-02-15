@@ -94,6 +94,7 @@
         spaceBetween: 20,
         centeredSlides: false,
         freeMode: false,
+        initialSlide: 0, // Ensure the first slide is visible on load
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -119,6 +120,17 @@
                 loop: false, 
             }
         }
+    });
+
+    // Ensure the page starts at the top when loaded
+    window.onload = function () {
+        window.scrollTo(0, 0);
+    };
+
+    // Reset scroll position and Swiper on window resize
+    window.addEventListener('resize', function () {
+        window.scrollTo(0, 0);
+        if (swiper) swiper.slideTo(0, 0);
     });
 </script>
 </body>
