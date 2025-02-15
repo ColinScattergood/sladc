@@ -266,4 +266,68 @@ footer a:hover {
         width: 90%;
         margin: 0 auto;
     }
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    color: var(--text-color);
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.dropbtn:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--hero-background);
+    min-width: 180px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 10px 15px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Responsive Styling */
+@media (max-width: 600px) {
+    .nav {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        text-align: center;
+    }
 }
