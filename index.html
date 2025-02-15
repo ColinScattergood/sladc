@@ -90,9 +90,11 @@
 
 <script>
     var swiper = new Swiper('.swiper-container', {
-        slidesPerView: 1,
+        slidesPerView: 'auto',
         spaceBetween: 20,
         loop: true,
+        loopAdditionalSlides: 2, /* Adds extra cloned slides for smooth looping */
+        centeredSlides: true, /* Keeps slides evenly distributed */
         navigation: {
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
@@ -102,19 +104,15 @@
             clickable: true,
         },
         mousewheel: {
-            forceToAxis: true, /* Enables smooth horizontal scrolling */
-            sensitivity: 1, /* Adjusts scroll speed */
-            simulateTouch: true, /* Enables mouse drag */
-            grabCursor: true, /* Shows grab cursor */
+            forceToAxis: true,
+            sensitivity: 1,
         },
         breakpoints: {
             640: {
-                slidesPerView: 2,
-                spaceBetween: 20
+                slidesPerView: 'auto',
             },
             1024: {
-                slidesPerView: 3,
-                spaceBetween: 30
+                slidesPerView: 'auto',
             }
         }
     });
