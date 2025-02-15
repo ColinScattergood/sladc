@@ -92,15 +92,14 @@
     var swiper;
 
     function initSwiper() {
-        // Destroy previous instance if it exists
-        if (swiper) swiper.destroy(true, true);
-
+        if (swiper) swiper.destroy(true, true); // Destroy existing instance
+    
         swiper = new Swiper('.swiper-container', {
             slidesPerView: 'auto',
             spaceBetween: 20,
             centeredSlides: false,
             freeMode: false,
-            initialSlide: 0, // Ensure the first slide is visible on load
+            initialSlide: 0, // Ensure first slide is the default
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -113,26 +112,18 @@
                 forceToAxis: false,
                 sensitivity: 1,
             },
-            loop: false, // 🔹 Ensure looping is fully disabled
+            loop: false, // Disable looping completely
             on: {
                 init: function () {
-                    this.slideTo(0, 0); // Force move to first slide on initialization
+                    this.slideTo(0, 0); // Force the first slide to be visible
                 },
+                resize: function () {
+                    this.slideTo(0, 0); // Reposition on window resize
+                }
             }
         });
     }
 
-    // Ensure the page starts at the top when loaded
-    window.onload = function () {
-        window.scrollTo(0, 0);
-        initSwiper(); // Initialize Swiper on page load
-    };
-
-    // Reset scroll position and Swiper when resizing
-    window.addEventListener('resize', function () {
-        window.scrollTo(0, 0);
-        initSwiper(); // Reinitialize Swiper on resize
-    });
 </script>
 </body>
 </html>
