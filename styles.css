@@ -301,12 +301,15 @@ footer a:hover {
 /* Swiper styles */
 .swiper-container {
     width: 100%;
+    max-width: 1200px; /* Prevents it from being too wide on large screens */
+    margin: 0 auto; /* Centers the swiper container */
     padding: 20px 0;
     overflow: hidden; /* Ensures smooth scrolling */
 }
 
 .swiper-wrapper {
     display: flex;
+    justify-content: center; /* Centers slides when they fit in the viewport */
     align-items: center;
 }
 
@@ -337,7 +340,7 @@ footer a:hover {
     display: block;
     margin-top: auto;
     padding: 10px;
-    background: #4caf50;
+    background: #2e8b6d ;
     color: white;
     border-radius: 6px;
     text-decoration: none;
