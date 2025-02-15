@@ -49,9 +49,65 @@ a:hover {
 }
 
 /* Navigation */
+.nav {
+    display: flex;
+    align-items: center;
+}
+
 .nav a {
     color: var(--text-color);
     margin: 0 10px;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background: none;
+    color: var(--text-color);
+    border: none;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px 15px;
+}
+
+.dropbtn:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--hero-background);
+    min-width: 180px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    z-index: 1000;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+    color: var(--text-color);
+    padding: 10px 15px;
+    display: block;
+    text-align: left;
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* Hero Section */
@@ -134,6 +190,21 @@ a:hover {
     margin-bottom: 20px;
 }
 
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 12px 18px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    background: #2e8b6d;
+}
+
 /* App Section */
 .apps {
     padding: 50px 20px;
@@ -166,8 +237,8 @@ a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between; /* Ensures even spacing */
-    min-height: 340px; /* Standardizes height */
+    justify-content: space-between;
+    min-height: 340px;
 }
 
 .app-card:hover {
@@ -188,21 +259,6 @@ a:hover {
     margin: 10px auto;
     border-radius: 8px;
     object-fit: contain;
-}
-
-/* Special VoteMapper Styling */
-.votemapper-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-}
-
-/* App Store Button */
-.app-store-button {
-    width: 140px;
-    display: block;
-    margin: 10px auto;
 }
 
 /* App Buttons */
@@ -266,59 +322,7 @@ footer a:hover {
         width: 90%;
         margin: 0 auto;
     }
-/* Dropdown Menu */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
 
-.dropbtn {
-    background: none;
-    color: var(--text-color);
-    border: none;
-    font-size: 1em;
-    font-weight: bold;
-    cursor: pointer;
-    padding: 10px 15px;
-}
-
-.dropbtn:hover {
-    text-decoration: underline;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: var(--hero-background);
-    min-width: 180px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    z-index: 1000;
-}
-
-/* Dropdown Links */
-.dropdown-content a {
-    color: var(--text-color);
-    padding: 10px 15px;
-    display: block;
-    text-align: left;
-    text-decoration: none;
-    font-size: 0.9em;
-}
-
-.dropdown-content a:hover {
-    background-color: var(--secondary-color);
-    border-radius: 8px;
-}
-
-/* Show Dropdown on Hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Responsive Styling */
-@media (max-width: 600px) {
     .nav {
         display: flex;
         flex-direction: column;
@@ -327,6 +331,17 @@ footer a:hover {
 
     .dropdown-content {
         position: static;
+        width: 100%;
+        text-align: center;
+        display: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    .dropbtn {
+        display: block;
         width: 100%;
         text-align: center;
     }
