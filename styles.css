@@ -38,7 +38,7 @@ a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 5px 15px; /* Reduced padding for smaller height */
+    padding: 5px 15px;
     background-color: var(--hero-background);
     color: var(--text-color);
     position: sticky;
@@ -136,7 +136,7 @@ a:hover {
 .app-logo {
     width: 100px;
     height: auto;
-    margin: 10px 0;
+    margin: 10px auto;
     border-radius: 8px;
     object-fit: contain;
 }
@@ -151,15 +151,22 @@ a:hover {
     font-weight: bold;
     text-decoration: none;
     transition: 0.3s ease-in-out;
+    margin-top: 10px;
 }
 
 .app-button:hover {
     background: #2e8b6d;
 }
 
-/* App Store Button */
+/* Special Styling for VoteMapper */
+.votemapper-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .app-store-button {
-    width: 150px;
+    width: 140px;
     margin-top: 10px;
 }
 
@@ -243,7 +250,7 @@ footer a {
     }
 
     .app-grid {
-        grid-template-columns: 1fr; /* Stack cards in single column on smaller screens */
+        grid-template-columns: 1fr;
     }
 
     .app-card {
