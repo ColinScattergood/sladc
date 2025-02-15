@@ -101,12 +101,18 @@
             el: '.swiper-pagination',
             clickable: true,
         },
+        mousewheel: {
+            forceToAxis: true, /* Enables smooth horizontal scrolling */
+            sensitivity: 1, /* Adjusts scroll speed */
+        },
         breakpoints: {
-            768: {
+            640: {
                 slidesPerView: 2,
+                spaceBetween: 20
             },
             1024: {
                 slidesPerView: 3,
+                spaceBetween: 30
             }
         }
     });
