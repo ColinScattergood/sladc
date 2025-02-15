@@ -310,7 +310,7 @@ footer a:hover {
 
 .swiper-slide {
     flex-shrink: 0;
-    width: 180px;
+    width: 80px;
     text-align: center;
     background: #1a1a1a;
     padding: 12px;
