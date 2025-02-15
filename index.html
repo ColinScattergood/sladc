@@ -77,7 +77,7 @@
         <div class="swiper-pagination"></div>
     </div>
 </section>
-
+<br>
     <!-- Footer -->
     <footer>
         <p>
@@ -92,7 +92,7 @@
     var swiper;
 
     function initSwiper() {
-        // Destroy previous instance if it exists (prevents duplicate issues)
+        // Destroy previous instance if it exists
         if (swiper) swiper.destroy(true, true);
 
         swiper = new Swiper('.swiper-container', {
@@ -113,8 +113,7 @@
                 forceToAxis: false,
                 sensitivity: 1,
             },
-            loop: window.innerWidth < 1024, // Enable loop only on small screens
-            loopedSlides: window.innerWidth < 1024 ? 3 : 0, // Ensure enough slides for looping
+            loop: false, // 🔹 Ensure looping is fully disabled
             on: {
                 init: function () {
                     this.slideTo(0, 0); // Force move to first slide on initialization
