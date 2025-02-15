@@ -1,4 +1,3 @@
-
 /* Global Styles */
 :root {
     --background-color: #121212;
@@ -10,6 +9,7 @@
     --font-family-main: Arial, sans-serif;
     --font-family-alt: 'Courier New', Courier, monospace;
     --heading-color: #cccccc; /* Softer color for headings */
+    --border-color: rgba(255, 255, 255, 0.1); /* Softer border color */
 }
 
 body {
@@ -39,7 +39,7 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     padding: 5px 15px; /* Reduced padding for smaller height */
-    background-color: var(--hero-background); /* Match hero section */
+    background-color: var(--hero-background);
     color: var(--text-color);
     position: sticky;
     top: 0;
@@ -47,7 +47,7 @@ a:hover {
 }
 
 .logo {
-    width: 60px; /* Reduced size for smaller header */
+    width: 60px;
     height: auto;
 }
 
@@ -59,8 +59,8 @@ a:hover {
 .hero {
     background: var(--hero-background);
     color: var(--text-color);
-    padding: 30px 20px 60px; /* Added bottom padding for more space under button */
-    border-bottom: 3px solid var(--primary-color); /* Subtle mint accent */
+    padding: 30px 20px 60px;
+    border-bottom: 3px solid var(--primary-color);
 }
 
 .hero h1 {
@@ -92,13 +92,16 @@ a:hover {
 
 /* Apps Section */
 .apps {
-    padding: 50px 20px; /* Increased top padding for more spacing */
+    padding: 50px 20px;
 }
 
 .apps h2 {
-    margin-bottom: 40px; /* Added more spacing between heading and cards */
+    margin-bottom: 40px;
+    font-size: 2em;
+    color: var(--heading-color);
 }
 
+/* App Grid Layout */
 .app-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -107,17 +110,57 @@ a:hover {
     margin: 0 auto;
 }
 
+/* App Card Styling */
 .app-card {
-    border: 1px solid #333;
-    padding: 20px;
-    border-radius: 8px;
     background: var(--card-background);
-    color: var(--text-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border-color);
+    transition: transform 0.2s ease-in-out;
+}
+
+.app-card:hover {
+    transform: translateY(-5px);
 }
 
 .app-card h3 {
-    margin-top: 0;
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 10px;
     color: var(--heading-color);
+}
+
+/* App Logos */
+.app-logo {
+    width: 100px;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* App Buttons */
+.app-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.app-button:hover {
+    background: #2e8b6d;
+}
+
+/* App Store Button */
+.app-store-button {
+    width: 150px;
+    margin-top: 10px;
 }
 
 /* About & Contact Sections */
@@ -197,5 +240,14 @@ footer a {
     .cta-button {
         display: inline-block;
         margin-top: 10px;
+    }
+
+    .app-grid {
+        grid-template-columns: 1fr; /* Stack cards in single column on smaller screens */
+    }
+
+    .app-card {
+        width: 90%;
+        margin: 0 auto;
     }
 }
