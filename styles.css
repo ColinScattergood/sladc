@@ -301,7 +301,7 @@ footer a:hover {
 /* Swiper styles */
 .swiper-container {
     width: 100%;
-    max-width: 1340px; /* Prevents it from being too wide on large screens */
+    max-width: 1400px; /* Prevents it from being too wide on large screens */
     margin: 0 auto; /* Centers the swiper container */
     padding: 20px 0;
     overflow: hidden; /* Ensures smooth scrolling */
