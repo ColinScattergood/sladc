@@ -134,8 +134,9 @@ a:hover {
 }
 
 .app-store-button {
-    width: 150px;
-    margin-top: 10px;
+    width: 120px;
+    height: auto; /* Allow height to adjust */
+    margin: 5px auto; /* Center it */
 }
 
 /* Features Section */
@@ -250,6 +251,7 @@ a:hover {
     font-weight: bold;
     margin-bottom: 10px;
     color: var(--heading-color);
+    flex-grow: 1;
 }
 
 /* App Logos */
@@ -312,6 +314,10 @@ footer a:hover {
     flex-shrink: 0;
     width: 300px !important; /* Force fixed width */
     max-width: 300px; /* Ensures it doesn’t expand */
+    height: 350px; /* Set a consistent height for all cards */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute content evenly */
     text-align: center;
     background: #1a1a1a;
     padding: 12px;
@@ -324,11 +330,12 @@ footer a:hover {
     width: 80px;
     height: 80px;
     margin: 10px auto;
+    flex-grow: 1; /* Allows logos to stay centered */
 }
 
 .app-button {
     display: block;
-    margin-top: 10px;
+    margin-top: auto;
     padding: 10px;
     background: #4caf50;
     color: white;
