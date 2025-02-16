@@ -287,8 +287,16 @@ footer a:hover {
 
 /* Mobile Tweaks */
 @media (max-width: 600px) {
+    .app-scroll-container {
+        display: flex;
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center them */
+        overflow-x: visible; /* Remove horizontal scrolling */
+    }
+    
     .app-card {
-        width: 80vw;
+        width: 90%; /* Adjust width for better spacing */
+        max-width: 350px;
     }
 
     .feature-grid {
