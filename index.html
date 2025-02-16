@@ -92,14 +92,14 @@
     var swiper;
 
     function initSwiper() {
-        if (swiper) swiper.destroy(true, true);
+        if (swiper) swiper.destroy(true, true); // Prevent multiple instances
     
         swiper = new Swiper('.swiper-container', {
             slidesPerView: 'auto',
             spaceBetween: 20,
             centeredSlides: false,
             freeMode: false,
-            initialSlide: 0, 
+            initialSlide: 0, // Always start on the first slide
             navigation: {
                 nextEl: '.swiper-button-next',
                 prevEl: '.swiper-button-prev',
@@ -115,9 +115,7 @@
             loop: false,
             on: {
                 init: function () {
-                    setTimeout(() => {
-                        this.slideTo(0, 0); // Ensures first slide is visible on load
-                    }, 100);
+                    this.slideTo(0, 0); // Start on the first slide
                 },
             }
         });

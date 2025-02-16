@@ -301,40 +301,40 @@ footer a:hover {
 /* Swiper styles */
 .swiper-container {
     width: 100%;
-    max-width: auto; /* Prevents it from being too wide on large screens */
-    margin: 0 auto; /* Centers the swiper container */
+    max-width: 1200px; /* Prevents slides from being too wide on desktop */
+    margin: 0 auto; /* Centers swiper */
     padding: 20px 0;
-    overflow-x: auto; /* Allows horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* Enables smooth scrolling on mobile */
+    overflow: hidden; /* Prevents extra scrolling */
 }
 
 .swiper-wrapper {
-    display: flex !important; /* Ensures slides are in a row */
-    flex-wrap: nowrap !important; /* Prevents stacking */
-    white-space: nowrap; /* Ensures slides do not wrap */
+    display: flex;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: stretch;
 }
 
 .swiper-slide {
-    display: flex !important; /* Ensures slides are treated as flex items */
-    flex-direction: column;
     flex-shrink: 0;
-    width: auto;
-    min-width: 80vw; /* Ensures at least one slide fits the screen on mobile */
-    max-width: 300px; /* Ensures slides don’t become too wide */
-    padding: 10px; /* Adds spacing inside each card */
+    width: 300px !important; /* Fixed width so they don’t stretch */
+    max-width: 90vw; /* Ensures proper sizing on mobile */
+    height: auto;
     background: var(--card-background);
+    padding: 20px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
+    text-align: center;
+}
+
+/* Add spacing between slides */
+.swiper-slide:not(:last-child) {
+    margin-right: 20px; /* Adds space between slides */
 }
 
 .app-logo {
     width: 80px;
-    height: 80px;
+    height: auto;
     margin: 10px auto;
-    flex-grow: 1; /* Allows logos to stay centered */
 }
 
 .app-button {
@@ -355,6 +355,11 @@ footer a:hover {
     background: white;
 }
 
+@media (max-width: 600px) {
+    .swiper-slide {
+        width: 80vw !important; /* Ensures slides are properly sized */
+    }
+}
 /* Responsive Design */
 @media (max-width: 600px) {
     .feature-grid {
