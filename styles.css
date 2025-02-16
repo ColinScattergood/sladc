@@ -220,19 +220,19 @@ a:hover {
 /* 🔥 New Horizontal Scroll (Replaces Swiper) */
 .app-scroll-container {
     display: flex;
-    flex-direction: row; /* Ensures horizontal layout */
-    gap: 20px; /* Spacing between cards */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Smooth scrolling effect */
+    flex-direction: row; /* Ensure horizontal layout */
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 20px; /* Add spacing between cards */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Smooth scrolling experience */
     padding: 20px;
-    white-space: nowrap; /* Prevents cards from wrapping to a new line */
+    white-space: nowrap; /* Prevents breaking into a new line */
 }
 
 /* App Cards */
 .app-card {
-    flex: 0 0 auto; /* Prevents shrinking/stretching */
-    width: 300px; /* Fixed width for uniformity */
-    max-width: 90vw; /* Prevents overflow on smaller screens */
+    flex: 0 0 300px; /* Ensures each card has a fixed width */
+    max-width: 90vw; /* Prevents overflow on small screens */
     padding: 20px;
     background: var(--card-background);
     border-radius: 12px;
@@ -261,7 +261,7 @@ a:hover {
 
 /* Hide Scrollbar (Optional) */
 .app-scroll-container::-webkit-scrollbar {
-    display: none;
+    display: none; /* Hides scrollbar for a clean look */
 }
 
 /* Footer */
