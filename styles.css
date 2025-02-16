@@ -104,19 +104,17 @@ a:hover {
 /* Hero Section */
 .hero {
     background: var(--hero-background);
-    padding: 60px 20px;
+    padding: 30px 20px; /* Reduce padding */
     text-align: center;
 }
 
 .hero h1 {
-    font-size: 2.5em;
-    margin-bottom: 10px;
-    color: var(--text-color);
+    font-size: 2em; /* Reduce heading size */
 }
 
 .hero p {
-    font-size: 1.2em;
-    margin-bottom: 20px;
+    font-size: 1em; /* Slightly smaller paragraph */
+    margin-bottom: 15px;
 }
 
 .hero-logo {
