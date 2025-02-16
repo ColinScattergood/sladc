@@ -54,11 +54,6 @@ a:hover {
     align-items: center;
 }
 
-.nav a {
-    color: var(--text-color);
-    margin: 0 10px;
-}
-
 /* Dropdown Menu */
 .dropdown {
     position: relative;
@@ -75,19 +70,16 @@ a:hover {
     padding: 10px 15px;
 }
 
-.dropbtn:hover {
-    text-decoration: underline;
-}
-
-/* Dropdown Content */
+/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
-    display: none;
+    display: none; /* Hidden initially */
     position: absolute;
     background-color: var(--hero-background);
     min-width: 180px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
     z-index: 1000;
+    text-align: left;
 }
 
 /* Dropdown Links */
@@ -95,7 +87,6 @@ a:hover {
     color: var(--text-color);
     padding: 10px 15px;
     display: block;
-    text-align: left;
     text-decoration: none;
     font-size: 0.9em;
 }
@@ -105,9 +96,9 @@ a:hover {
     border-radius: 8px;
 }
 
-/* Show Dropdown on Hover */
+/* Remove Hover Activation (Only JS Will Toggle It) */
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: none; /* Prevents hover dropdown activation */
 }
 
 /* Hero Section */
@@ -217,22 +208,22 @@ a:hover {
     color: var(--heading-color);
 }
 
-/* 🔥 New Horizontal Scroll (Replaces Swiper) */
+/* Horizontal Scroll (Replaces Swiper) */
 .app-scroll-container {
-    display: flex !important; /* Ensure flexbox is applied */
-    flex-direction: row !important; /* Force horizontal layout */
-    flex-wrap: nowrap !important; /* Prevent wrapping */
-    gap: 20px; /* Adds spacing between cards */
-    overflow-x: auto; /* Enables horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Smooth scrolling */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
     padding: 20px;
-    white-space: nowrap; /* Prevents breaking into a new line */
+    white-space: nowrap;
 }
 
 /* App Cards */
 .app-card {
-    flex: 0 0 300px !important; /* Forces each card to be 300px wide */
-    max-width: 300px !important; /* Prevents stretching */
+    flex: 0 0 300px;
+    max-width: 300px;
     padding: 20px;
     background: var(--card-background);
     border-radius: 12px;
@@ -243,15 +234,15 @@ a:hover {
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    word-wrap: break-word; /* Ensures text wraps */
-    overflow: hidden; /* Prevents overflow */
+    word-wrap: break-word;
+    overflow: hidden;
 }
 
 .app-card p {
-    white-space: normal; /* Ensures wrapping */
+    white-space: normal;
     word-wrap: break-word;
     overflow-wrap: break-word;
-    max-width: 90%; /* Keeps text contained */
+    max-width: 90%;
 }
 
 /* Ensure images inside cards are well-sized */
@@ -270,7 +261,7 @@ a:hover {
     border-radius: 6px;
     text-decoration: none;
     margin-top: 10px;
-    white-space: nowrap; /* Prevents button text from wrapping */
+    white-space: nowrap;
 }
 
 /* Hide Scrollbar (Optional) */
@@ -299,7 +290,7 @@ footer a:hover {
 /* Mobile Tweaks */
 @media (max-width: 600px) {
     .app-card {
-        width: 80vw; /* Ensures full-width display on mobile */
+        width: 80vw;
     }
 
     .feature-grid {
@@ -318,10 +309,6 @@ footer a:hover {
         font-size: 1.8em;
     }
 
-    .app-grid {
-        grid-template-columns: 1fr;
-    }
-
     .app-card {
         width: 90%;
         margin: 0 auto;
@@ -338,10 +325,6 @@ footer a:hover {
         width: 100%;
         text-align: center;
         display: none;
-    }
-
-    .dropdown.active .dropdown-content {
-        display: block;
     }
 
     .dropbtn {

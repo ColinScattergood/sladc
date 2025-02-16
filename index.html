@@ -13,9 +13,14 @@
             <img src="logo.png" alt="Scattered Labs Logo" class="logo">
         </a>
         <nav class="nav">
-            <a href="index.html">Home</a>
-            <!--<a href="apps.html">Our Apps</a>-->
-            <a href="mailto:colin@scatteredlabsapps.com">Contact</a>
+            <div class="dropdown">
+                <button class="dropbtn" onclick="toggleDropdown()">Menu</button>
+                <div class="dropdown-content" id="dropdownMenu">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                    <a href="mailto:colin@scatteredlabsapps.com">Contact</a>
+                </div>
+            </div>
         </nav>
     </header>
 
@@ -29,10 +34,24 @@
         <h2>Our Apps</h2>
         <div class="app-scroll-container">
             <div class="app-card">
+                <h3>HousingHub.pro</h3>
+                <p>See residential construction headlines from top sources, summarized and updated hourly</p>
+                <img src="hh-256.png" alt="HousingHub App" class="app-logo">
+                <a href="https://www.housinghub.pro" class="app-button">Visit HousingHub</a>
+            </div>
+
+            <div class="app-card">
                 <h3>SunUp</h3>
                 <p>Start your day the easy way with SunUp</p>
                 <img src="su-256.png" alt="SunUp App" class="app-logo">
                 <a href="https://sunup.scatteredlabsapps.com/" class="app-button">Try SunUp</a>
+            </div>
+
+            <div class="app-card">
+                <h3>TicketDraft</h3>
+                <p>Make season ticket sharing fair and fun with TicketDraft</p>
+                <img src="td-256.png" alt="TicketDraft App" class="app-logo">
+                <a href="https://www.ticketdraft.app" class="app-button">Explore TicketDraft</a>
             </div>
     
             <div class="app-card">
@@ -44,20 +63,6 @@
                 </a>
                 <a href="https://scatteredlabsapps.com/votemapper" class="app-button">Learn More</a>
             </div>
-    
-            <div class="app-card">
-                <h3>TicketDraft</h3>
-                <p>Make season ticket sharing fair and fun with TicketDraft</p>
-                <img src="td-256.png" alt="TicketDraft App" class="app-logo">
-                <a href="https://www.ticketdraft.app" class="app-button">Explore TicketDraft</a>
-            </div>
-    
-            <div class="app-card">
-                <h3>HousingHub.pro</h3>
-                <p>See residential construction headlines from top sources, summarized and updated hourly</p>
-                <img src="hh-256.png" alt="HousingHub App" class="app-logo">
-                <a href="https://www.housinghub.pro" class="app-button">Visit HousingHub</a>
-            </div>
         </div>
     </section>
 <br>
@@ -68,5 +73,19 @@
             <a href="privacy-policy.html">Privacy Policy</a>
         </p>
     </footer>
+    <script>
+        function toggleDropdown() {
+            var menu = document.getElementById("dropdownMenu");
+            menu.style.display = (menu.style.display === "block") ? "none" : "block";
+        }
+    
+        // Close dropdown when clicking outside
+        document.addEventListener("click", function(event) {
+            var dropdown = document.querySelector(".dropdown");
+            if (!dropdown.contains(event.target)) {
+                document.getElementById("dropdownMenu").style.display = "none";
+            }
+        });
+    </script>
 </body>
 </html>
