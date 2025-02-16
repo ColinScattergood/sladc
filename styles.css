@@ -220,11 +220,12 @@ a:hover {
 /* 🔥 New Horizontal Scroll (Replaces Swiper) */
 .app-scroll-container {
     display: flex;
+    flex-direction: row; /* Ensures horizontal layout */
     gap: 20px; /* Spacing between cards */
-    overflow-x: auto; /* Smooth horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Ensures smooth snap scrolling */
+    overflow-x: auto; /* Enables horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Smooth scrolling effect */
     padding: 20px;
-    white-space: nowrap; /* Prevents wrapping */
+    white-space: nowrap; /* Prevents cards from wrapping to a new line */
 }
 
 /* App Cards */
