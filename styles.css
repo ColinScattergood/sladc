@@ -224,15 +224,15 @@ a:hover {
     flex-wrap: nowrap; /* Prevent wrapping */
     gap: 20px; /* Add spacing between cards */
     overflow-x: auto; /* Enable horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Smooth scrolling experience */
+    scroll-snap-type: x mandatory; /* Smooth scrolling */
     padding: 20px;
     white-space: nowrap; /* Prevents breaking into a new line */
 }
 
 /* App Cards */
 .app-card {
-    flex: 0 0 300px; /* Ensures each card has a fixed width */
-    max-width: 90vw; /* Prevents overflow on small screens */
+    flex: 0 0 300px; /* Fixed width for uniformity */
+    max-width: 300px; /* Ensures cards don’t stretch */
     padding: 20px;
     background: var(--card-background);
     border-radius: 12px;
@@ -261,7 +261,7 @@ a:hover {
 
 /* Hide Scrollbar (Optional) */
 .app-scroll-container::-webkit-scrollbar {
-    display: none; /* Hides scrollbar for a clean look */
+    display: none;
 }
 
 /* Footer */
