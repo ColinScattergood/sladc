@@ -3,76 +3,226 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Scattered Labs</title>
-    <link rel="stylesheet" href="/styles.css">
+    <title>About | Scattered Labs</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(62, 180, 137, 0.15) 0%, rgba(46, 139, 109, 0.05) 100%);
+        }
+        
+        .glass-effect {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 50%;
+            background: #3EB489;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .subtle-pattern {
+            background-image: radial-gradient(rgba(62, 180, 137, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-black text-gray-100 antialiased">
+    <!-- Subtle background pattern -->
+    <div class="fixed inset-0 subtle-pattern opacity-5"></div>
 
     <!-- Header -->
-    <header class="header">
-        <a href="/">
-            <img src="/logo.png" alt="Scattered Labs Logo" class="logo">
-        </a>
-        <nav class="nav">
-            <a href="/">Home</a>
-            <a href="/about.html">About</a>
-            <a href="mailto:colin@scatteredlabsapps.com">Contact</a>
-        </nav>
+    <header class="fixed w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/api/placeholder/48/48" alt="Scattered Labs Logo" class="w-8 h-8">
+                    <span class="font-medium text-lg tracking-tight">Scattered Labs</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Work</a>
+                    <a href="/about" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="mailto:colin@scatteredlabsapps.com" class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full hover:bg-green-700 transition-colors">
+                        Get in Touch
+                    </a>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <h1>About Scattered Labs</h1>
-        <p>Building simple, powerful apps that solve real-world problems.</p>
-        <img src="/logo.png" alt="Scattered Labs Logo" class="hero-logo">
+    <section class="relative pt-32 pb-20 px-6 gradient-bg">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-6">About Scattered Labs</h1>
+            <p class="text-xl text-gray-400 leading-relaxed mb-8 max-w-2xl mx-auto text-balance">
+                We're a boutique software studio focused on creating thoughtfully designed applications 
+                that solve real-world problems and enhance everyday experiences.
+            </p>
+        </div>
     </section>
 
-    <!-- Mission & Overview Section -->
-    <section class="mission">
-        <h2>Our Mission</h2>
-        <p>At Scattered Labs, we believe in creating technology that makes life easier.  
-           Our goal is to build intuitive and effective applications that simplify  
-           complex problems for everyday users.</p>
-    </section>
-
-    <!-- What We Do Section -->
-    <section class="features">
-        <h2>What We Do</h2>
-        <div class="feature-grid">
-            <div class="feature">
-                <h3>🚀 Innovative Apps</h3>
-                <p>We design apps that solve real-world problems with intuitive, user-friendly experiences.</p>
-            </div>
-            <div class="feature">
-                <h3>📊 Data-Driven Insights</h3>
-                <p>We leverage analytics to continuously improve and optimize our products.</p>
-            </div>
-            <div class="feature">
-                <h3>⚡ Seamless Experiences</h3>
-                <p>Our apps integrate smoothly into your workflow, making life more efficient.</p>
-            </div>
-            <div class="feature">
-                <h3>💡 Constant Innovation</h3>
-                <p>We are always exploring new ideas and pushing the boundaries of what’s possible.</p>
+    <!-- Mission Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">Our Mission</h2>
+                    <p class="text-gray-400 mb-6 text-balance">
+                        At Scattered Labs, we believe in creating technology that makes life easier. Our goal is to build 
+                        intuitive and effective applications that simplify complex problems for everyday users.
+                    </p>
+                    <p class="text-gray-400 text-balance">
+                        We focus on crafting solutions that are not just functional, but delightful to use, 
+                        always keeping our users' needs at the center of everything we do.
+                    </p>
+                </div>
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-500 mb-2">4+</div>
+                            <div class="text-sm text-gray-400">Apps Launched</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-500 mb-2">1000s</div>
+                            <div class="text-sm text-gray-400">Happy Users</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-500 mb-2">2+</div>
+                            <div class="text-sm text-gray-400">Years Active</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-green-500 mb-2">24/7</div>
+                            <div class="text-sm text-gray-400">Support</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="cta">
-        <h2>Let's Build the Future Together</h2>
-        <p>Want to collaborate, have an idea, or just say hello? We'd love to hear from you!</p>
-        <a href="mailto:colin@scatteredlabsapps.com" class="cta-button">Contact Us</a>
+    <!-- Values Section -->
+    <section class="py-24 px-6 gradient-bg">
+        <div class="container mx-auto max-w-4xl">
+            <h2 class="text-3xl font-bold mb-16 text-center">Our Values</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="text-green-500 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">User Privacy</h3>
+                    <p class="text-gray-400 text-balance">
+                        We believe in protecting our users' data and maintaining transparency in our practices.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="text-green-500 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Quality First</h3>
+                    <p class="text-gray-400 text-balance">
+                        We're committed to delivering reliable, high-quality solutions that our users can depend on.
+                    </p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="text-green-500 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Innovation</h3>
+                    <p class="text-gray-400 text-balance">
+                        We continuously explore new ideas and push boundaries to create better solutions.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
+            <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto text-balance">
+                Have a question or want to discuss a potential project? We'd love to hear from you.
+            </p>
+            <a href="mailto:colin@scatteredlabsapps.com" 
+               class="inline-flex items-center px-8 py-4 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-colors">
+                Contact Us
+                <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
     </section>
 
     <!-- Footer -->
-    <footer>
-        <p>
-            <a href="/">Home</a> | 
-            <a href="/about.html">About</a> | 
-            <a href="mailto:colin@scatteredlabsapps.com">Contact</a>
-        </p>
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto max-w-6xl px-6 py-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <a href="/" class="flex items-center space-x-3 mb-6">
+                        <img src="/api/placeholder/40/40" alt="Scattered Labs Logo" class="w-8 h-8">
+                        <span class="font-medium">Scattered Labs</span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-md">
+                        Building thoughtfully designed applications that solve real-world problems and enhance everyday experiences.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 md:justify-end">
+                    <div>
+                        <h4 class="text-sm font-semibold mb-4">Navigation</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a></li>
+                            <li><a href="#work" class="text-sm text-gray-400 hover:text-white transition-colors">Work</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/privacy-policy" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="/terms" class="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">© 2025 Scattered Labs LLC. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="mailto:colin@scatteredlabsapps.com" class="text-gray-400 hover:text-white transition-colors">
+                        <span class="sr-only">Email</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
     </footer>
-
 </body>
 </html>
