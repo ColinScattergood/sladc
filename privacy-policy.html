@@ -4,118 +4,257 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy | Scattered Labs</title>
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(62, 180, 137, 0.15) 0%, rgba(46, 139, 109, 0.05) 100%);
+        }
+        .glass-effect {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 50%;
+            background: #3EB489;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .subtle-pattern {
+            background-image: radial-gradient(rgba(62, 180, 137, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
 </head>
-<body>
+<body class="bg-black text-gray-100 antialiased">
+    <div class="fixed inset-0 subtle-pattern opacity-5"></div>
+
     <!-- Header -->
-    <header class="header">
-        <a href="index.html">
-            <img src="logo.png" alt="Scattered Labs Logo" class="logo">
-        </a>
-        <nav class="nav">
-            <a href="index.html">Home</a>
-            <a href="apps.html">Our Apps</a>
-            <a href="mailto:colin@scatteredlabsapps.com">Contact</a>
-        </nav>
+    <header class="fixed w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/api/placeholder/48/48" alt="Scattered Labs Logo" class="w-8 h-8">
+                    <span class="font-medium text-lg tracking-tight">Scattered Labs</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Home</a>
+                    <a href="/about" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="mailto:colin@scatteredlabsapps.com" class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full hover:bg-green-700 transition-colors">
+                        Contact
+                    </a>
+                </nav>
+            </div>
+        </div>
     </header>
 
-    <div class="container">
-        <h1>Privacy Policy</h1>
-        <p><strong>Effective Date:</strong> 02/02/2025</p>
-    
-        <h2>1. Introduction</h2>
-        <p>Welcome to Scattered Labs LLC and TicketDraft. Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our websites, mobile applications, and related services (collectively, "Services").</p>
-    
-        <h2>2. Information We Collect</h2>
-        <h3>a. Information You Provide</h3>
-        <p>We may collect personal information that you voluntarily provide when you:</p>
-        <ul>
-            <li>Create an account or register for our Services.</li>
-            <li>Contact us for support or inquiries.</li>
-            <li>Participate in surveys, promotions, or other interactive features.</li>
-            <li>Submit content or communicate with us.</li>
-        </ul>
-        <p>This information may include your name, email address, phone number, payment details, usernames, passwords, and any other information you choose to provide.</p>
-    
-        <h3>b. Information We Automatically Collect</h3>
-        <ul>
-            <li><strong>Device Information:</strong> IP address, browser type, operating system, device model, device identifiers.</li>
-            <li><strong>Usage Information:</strong> Pages visited, time spent on our Services, clicks, navigation paths, access times.</li>
-            <li><strong>Cookies and Tracking Technologies:</strong> Data collected through cookies, web beacons, and similar tools.</li>
-            <li><strong>Location Information:</strong> If you enable location services.</li>
-        </ul>
-    
-        <h3>c. Information from Third Parties</h3>
-        <p>We may collect information from third-party sources, such as social media platforms, business partners, or analytics providers like Google Analytics and Pendo. These services may collect and process data such as:</p>
-        <ul>
-            <li>App usage data (e.g., screen views, interactions, session duration).</li>
-            <li>Device and browser information.</li>
-            <li>IP addresses (which may be anonymized).</li>
-        </ul>
-    
-        <h2>3. How We Use Your Information</h2>
-        <p>We use the information we collect to:</p>
-        <ul>
-            <li>Provide, operate, and maintain our Services.</li>
-            <li>Improve, personalize, and expand our Services.</li>
-            <li>Understand and analyze how you use our Services.</li>
-            <li>Develop new products, services, features, and functionalities.</li>
-            <li>Communicate with you, including for customer service, updates, marketing, and promotional purposes.</li>
-            <li>Process transactions and manage orders.</li>
-            <li>Send text messages and push notifications.</li>
-            <li>Ensure security and prevent fraud or misuse.</li>
-            <li>Comply with legal obligations and enforce our terms.</li>
-        </ul>
-    
-        <h2>4. Sharing Your Information</h2>
-        <p>We may share your information in the following situations:</p>
-        <ul>
-            <li><strong>Service Providers:</strong> Third parties assisting in delivering our Services.</li>
-            <li><strong>Business Partners:</strong> In connection with co-branded offerings or promotions.</li>
-            <li><strong>Analytics Providers:</strong> Non-personal, aggregated, or anonymized data with services like Google Analytics and Pendo.</li>
-            <li><strong>Business Transfers:</strong> During negotiations of mergers, sales, acquisitions, or similar events.</li>
-            <li><strong>Legal Obligations:</strong> To comply with legal requirements or protect our rights.</li>
-            <li><strong>With Your Consent:</strong> As directed by you.</li>
-        </ul>
-        <p>We do not sell your personal information to third parties.</p>
-    
-        <h2>5. Security of Your Information</h2>
-        <p>We implement administrative, technical, and physical security measures to safeguard your personal information. While we strive to protect your data, no system is completely secure. We encourage you to protect your information by using strong passwords and keeping them confidential.</p>
-    
-        <h2>6. Data Retention</h2>
-        <p>We retain personal information as long as necessary to fulfill the purposes outlined in this policy unless a longer retention period is required by law.</p>
-    
-        <h2>7. Your Choices and Rights</h2>
-        <p>You have rights regarding your personal information, including:</p>
-        <ul>
-            <li><strong>Access and Correction:</strong> Request access to or correction of your personal information.</li>
-            <li><strong>Data Portability:</strong> Request a copy of your data in a portable format.</li>
-            <li><strong>Opt-Out:</strong> Manage preferences for receiving marketing communications.</li>
-            <li><strong>Delete Data:</strong> Request deletion of your data, subject to legal obligations.</li>
-        </ul>
-        <p>To exercise these rights, contact us at <a href="mailto:privacy@scatteredlabsapps.com">privacy@scatteredlabsapps.com</a>.</p>
-    
-        <h2>8. Children’s Privacy</h2>
-        <p>Our Services are not intended for children under 13. We do not knowingly collect personal information from them. If you believe a child under 13 has provided personal information, contact us at <a href="mailto:privacy@scatteredlabsapps.com">privacy@scatteredlabsapps.com</a> to have it removed.</p>
-    
-        <h2>9. Third-Party Links</h2>
-        <p>Our Services may contain links to third-party websites or services. We are not responsible for their privacy practices. Please review their privacy policies before providing personal information.</p>
-    
-        <h2>10. International Users</h2>
-        <p>If you access our Services from outside the United States, your information may be transferred to, stored, and processed in the U.S. By using our Services, you consent to this transfer.</p>
-    
-        <h2>11. Updates to This Policy</h2>
-        <p>We may update this Privacy Policy from time to time. Changes will be effective when posted with a new effective date. We encourage you to review this page periodically.</p>
-    
-        <h2>12. Contact Us</h2>
-        <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
-        <address>
-            <strong>Scattered Labs LLC</strong><br>
-            Email: <a href="mailto:privacy@scatteredlabsapps.com">privacy@scatteredlabsapps.com</a><br>
-            <strong>or</strong><br>
-            <strong>TicketDraft</strong><br>
-            Email: <a href="mailto:contact@ticketdraft.com">contact@ticketdraft.com</a>
-        </address>
+    <!-- Main Content -->
+    <main class="pt-32 pb-20 px-6">
+        <div class="container mx-auto max-w-4xl">
+            <div class="glass-effect rounded-xl p-8 mb-12">
+                <h1 class="text-4xl font-bold mb-4">Privacy Policy</h1>
+                <p class="text-lg text-gray-400">Effective Date: 02/02/2025</p>
+            </div>
+
+            <div class="space-y-12 text-gray-300">
+                <!-- Introduction -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">1. Introduction</h2>
+                    <p class="leading-relaxed">Welcome to Scattered Labs LLC and TicketDraft. Your privacy is important to us, and we are committed to protecting your personal information. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our websites, mobile applications, and related services (collectively, "Services").</p>
+                </section>
+
+                <!-- Information We Collect -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-6">2. Information We Collect</h2>
+                    
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">a. Information You Provide</h3>
+                            <p class="mb-4">We may collect personal information that you voluntarily provide when you:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>Create an account or register for our Services</li>
+                                <li>Contact us for support or inquiries</li>
+                                <li>Participate in surveys, promotions, or other interactive features</li>
+                                <li>Submit content or communicate with us</li>
+                            </ul>
+                            <p class="mt-4">This information may include your name, email address, phone number, payment details, usernames, passwords, and any other information you choose to provide.</p>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">b. Information We Automatically Collect</h3>
+                            <ul class="list-disc pl-6 space-y-3">
+                                <li><span class="text-white font-medium">Device Information:</span> IP address, browser type, operating system, device model, device identifiers</li>
+                                <li><span class="text-white font-medium">Usage Information:</span> Pages visited, time spent on our Services, clicks, navigation paths, access times</li>
+                                <li><span class="text-white font-medium">Cookies and Tracking Technologies:</span> Data collected through cookies, web beacons, and similar tools</li>
+                                <li><span class="text-white font-medium">Location Information:</span> If you enable location services</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-4">c. Information from Third Parties</h3>
+                            <p class="mb-4">We may collect information from third-party sources, such as social media platforms, business partners, or analytics providers like Google Analytics and Pendo. These services may collect and process data such as:</p>
+                            <ul class="list-disc pl-6 space-y-2">
+                                <li>App usage data (e.g., screen views, interactions, session duration)</li>
+                                <li>Device and browser information</li>
+                                <li>IP addresses (which may be anonymized)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How We Use Your Information -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">3. How We Use Your Information</h2>
+                    <p class="mb-4">We use the information we collect to:</p>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Provide, operate, and maintain our Services</li>
+                        <li>Improve, personalize, and expand our Services</li>
+                        <li>Understand and analyze how you use our Services</li>
+                        <li>Develop new products, services, features, and functionalities</li>
+                        <li>Communicate with you, including for customer service, updates, marketing, and promotional purposes</li>
+                        <li>Process transactions and manage orders</li>
+                        <li>Send text messages and push notifications</li>
+                        <li>Ensure security and prevent fraud or misuse</li>
+                        <li>Comply with legal obligations and enforce our terms</li>
+                    </ul>
+                </section>
+
+                <!-- Sharing Your Information -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">4. Sharing Your Information</h2>
+                    <p class="mb-4">We may share your information in the following situations:</p>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li><span class="text-white font-medium">Service Providers:</span> Third parties assisting in delivering our Services</li>
+                        <li><span class="text-white font-medium">Business Partners:</span> In connection with co-branded offerings or promotions</li>
+                        <li><span class="text-white font-medium">Analytics Providers:</span> Non-personal, aggregated, or anonymized data with services like Google Analytics and Pendo</li>
+                        <li><span class="text-white font-medium">Business Transfers:</span> During negotiations of mergers, sales, acquisitions, or similar events</li>
+                        <li><span class="text-white font-medium">Legal Obligations:</span> To comply with legal requirements or protect our rights</li>
+                        <li><span class="text-white font-medium">With Your Consent:</span> As directed by you</li>
+                    </ul>
+                    <p class="mt-4 text-white font-medium">We do not sell your personal information to third parties.</p>
+                </section>
+
+                <!-- Security -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">5. Security of Your Information</h2>
+                    <p class="leading-relaxed">We implement administrative, technical, and physical security measures to safeguard your personal information. While we strive to protect your data, no system is completely secure. We encourage you to protect your information by using strong passwords and keeping them confidential.</p>
+                </section>
+
+                <!-- Data Retention -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">6. Data Retention</h2>
+                    <p class="leading-relaxed">We retain personal information as long as necessary to fulfill the purposes outlined in this policy unless a longer retention period is required by law.</p>
+                </section>
+
+                <!-- Your Choices and Rights -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">7. Your Choices and Rights</h2>
+                    <p class="mb-4">You have rights regarding your personal information, including:</p>
+                    <ul class="list-disc pl-6 space-y-3">
+                        <li><span class="text-white font-medium">Access and Correction:</span> Request access to or correction of your personal information</li>
+                        <li><span class="text-white font-medium">Data Portability:</span> Request a copy of your data in a portable format</li>
+                        <li><span class="text-white font-medium">Opt-Out:</span> Manage preferences for receiving marketing communications</li>
+                        <li><span class="text-white font-medium">Delete Data:</span> Request deletion of your data, subject to legal obligations</li>
+                    </ul>
+                    <p class="mt-4">To exercise these rights, contact us at <a href="mailto:privacy@scatteredlabsapps.com" class="text-green-500 hover:text-green-400">privacy@scatteredlabsapps.com</a>.</p>
+                </section>
+
+                <!-- Children's Privacy -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">8. Children's Privacy</h2>
+                    <p class="leading-relaxed">Our Services are not intended for children under 13. We do not knowingly collect personal information from them. If you believe a child under 13 has provided personal information, contact us at <a href="mailto:privacy@scatteredlabsapps.com" class="text-green-500 hover:text-green-400">privacy@scatteredlabsapps.com</a> to have it removed.</p>
+                </section>
+
+                <!-- Third-Party Links -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">9. Third-Party Links</h2>
+                    <p class="leading-relaxed">Our Services may contain links to third-party websites or services. We are not responsible for their privacy practices. Please review their privacy policies before providing personal information.</p>
+                </section>
+
+                <!-- International Users -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">10. International Users</h2>
+                    <p class="leading-relaxed">If you access our Services from outside the United States, your information may be transferred to, stored, and processed in the U.S. By using our Services, you consent to this transfer.</p>
+                </section>
+
+                <!-- Updates -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">11. Updates to This Policy</h2>
+                    <p class="leading-relaxed">We may update this Privacy Policy from time to time. Changes will be effective when posted with a new effective date. We encourage you to review this page periodically.</p>
+                </section>
+
+                <!-- Contact -->
+                <section>
+                    <h2 class="text-2xl font-bold text-white mb-4">12. Contact Us</h2>
+                    <p class="mb-6">If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:</p>
+                    <div class="glass-effect rounded-xl p-6 space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Scattered Labs LLC</h3>
+                            <a href="mailto:privacy@scatteredlabsapps.com" class="text-green-500 hover:text-green-400">privacy@scatteredlabsapps.com</a>
+                        </div>
+                        <div class="pt-6 border-t border-gray-800">
+                            <h3 class="text-xl font-bold text-white mb-2">TicketDraft</h3>
+                            <a href="mailto:contact@ticketdraft.com" class="text-green-500 hover:text-green-400">contact@ticketdraft.com</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+<!-- Footer -->
+<footer class="border-t border-gray-800">
+    <div class="container mx-auto max-w-6xl px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-8 items-center">
+            <div>
+                <a href="/" class="flex items-center space-x-3 mb-6">
+                    <img src="/api/placeholder/40/40" alt="Scattered Labs Logo" class="w-8 h-8">
+                    <span class="font-medium">Scattered Labs</span>
+                </a>
+                <p class="text-gray-400 text-sm max-w-md">
+                    Building thoughtfully designed applications that solve real-world problems and enhance everyday experiences.
+                </p>
+            </div>
+            <div class="grid grid-cols-2 gap-8 md:justify-end">
+                <div>
+                    <h4 class="text-sm font-semibold mb-4">Navigation</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-sm font-semibold mb-4">Legal</h4>
+                    <ul class="space-y-3">
+                        <li><a href="/privacy-policy" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="/terms" class="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+            <p class="text-sm text-gray-400">© 2025 Scattered Labs LLC. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+                <a href="mailto:colin@scatteredlabsapps.com" class="text-gray-400 hover:text-white transition-colors">
+                    <span class="sr-only">Email</span>
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
     </div>
+</footer>
 </body>
 </html>
