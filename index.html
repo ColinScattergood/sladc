@@ -58,8 +58,17 @@
 
         .app-card {
             transition: all 0.3s ease-in-out;
+            padding: 1rem; /* Reduce padding */
+            font-size: 0.875rem; /* Reduce text size */
+            max-width: 300px; /* Limit maximum width */
+            margin: auto; /* Center if needed */
         }
-        
+
+        .app-card img {
+            height: 150px; /* Reduce image size */
+            object-fit: cover;
+        }
+
         .app-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
