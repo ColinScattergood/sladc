@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scattered Labs | Innovative Apps for Real Problems</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <style>
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, rgba(62, 180, 137, 0.15) 0%, rgba(46, 139, 109, 0.05) 100%);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(145deg, rgba(31, 31, 31, 0.6) 0%, rgba(17, 17, 17, 0.8) 100%);
+            backdrop-filter: blur(10px);
+        }
+        
+        .glass-effect {
+            background: rgba(17, 17, 17, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .floating-element {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 1px;
+            bottom: -2px;
+            left: 50%;
+            background: #3EB489;
+            transition: all 0.3s ease-in-out;
+            transform: translateX(-50%);
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .subtle-pattern {
+            background-image: radial-gradient(rgba(62, 180, 137, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        .app-card {
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .app-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-balance {
+            text-wrap: balance;
+        }
+    </style>
+</head>
+<body class="bg-black text-gray-100 antialiased">
+    <!-- Subtle background pattern -->
+    <div class="fixed inset-0 subtle-pattern opacity-5"></div>
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 glass-effect">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="/" class="flex items-center space-x-3">
+                    <img src="/api/placeholder/48/48" alt="Scattered Labs Logo" class="w-8 h-8">
+                    <span class="font-medium text-lg tracking-tight">Scattered Labs</span>
+                </a>
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="/" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">Work</a>
+                    <a href="/about" class="nav-link text-sm text-gray-300 hover:text-white transition-colors">About</a>
+                    <a href="mailto:colin@scatteredlabsapps.com" class="px-4 py-2 text-sm font-medium text-white bg-green-600 rounded-full hover:bg-green-700 transition-colors">
+                        Get in Touch
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen pt-32 pb-20 px-6 gradient-bg overflow-hidden">
+        <div class="container mx-auto max-w-6xl relative z-10">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance mb-6">
+                        Crafting Digital Solutions for Real Problems
+                    </h1>
+                    <p class="text-xl text-gray-400 leading-relaxed mb-8 text-balance">
+                        We build thoughtfully designed apps that simplify complex challenges and enhance everyday experiences.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#work" class="px-8 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-colors">
+                            View Our Work
+                        </a>
+                        <a href="/about" class="px-8 py-3 border border-gray-700 rounded-full hover:bg-gray-900 transition-colors">
+                            About Us
+                        </a>
+                    </div>
+                </div>
+                <div class="relative hidden md:block">
+                    <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10"></div>
+                    <img src="/api/placeholder/600/600" alt="App Interface Preview" class="floating-element relative z-0 rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Work -->
+    <section id="work" class="py-24 px-6">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold mb-16 text-center">Featured Work</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- TicketDraft -->
+                <article class="app-card card-gradient rounded-2xl overflow-hidden">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="/api/placeholder/800/400" alt="TicketDraft Interface" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">TicketDraft</h3>
+                        <p class="text-gray-400 mb-6 text-balance">
+                            A revolutionary platform that transforms how groups share and manage season tickets, making the process fair and enjoyable for everyone.
+                        </p>
+                        <a href="https://www.ticketdraft.app" class="inline-flex items-center text-green-500 hover:text-green-400">
+                            Learn More
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- HousingHub -->
+                <article class="app-card card-gradient rounded-2xl overflow-hidden">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="/api/placeholder/800/400" alt="HousingHub Interface" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">HousingHub.pro</h3>
+                        <p class="text-gray-400 mb-6 text-balance">
+                            Your essential resource for real-time residential construction insights, delivering curated headlines and analysis updated hourly.
+                        </p>
+                        <a href="https://www.housinghub.pro" class="inline-flex items-center text-green-500 hover:text-green-400">
+                            Visit Platform
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- VoteMapper -->
+                <article class="app-card card-gradient rounded-2xl overflow-hidden">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="/api/placeholder/800/400" alt="VoteMapper Interface" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">VoteMapper</h3>
+                        <p class="text-gray-400 mb-6 text-balance">
+                            An innovative election simulation tool that brings sophisticated political analysis to your fingertips.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="https://apps.apple.com/us/app/votemapper-election-simulator/id6739097969" class="inline-flex items-center text-green-500 hover:text-green-400">
+                                Download
+                                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                            <a href="/votemapper" class="inline-flex items-center text-green-500 hover:text-green-400">
+                                Learn More
+                                <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                    <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- SunUp -->
+                <article class="app-card card-gradient rounded-2xl overflow-hidden">
+                    <div class="aspect-video relative overflow-hidden">
+                        <img src="/api/placeholder/800/400" alt="SunUp Interface" class="object-cover w-full h-full">
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-bold mb-3">SunUp</h3>
+                        <p class="text-gray-400 mb-6 text-balance">
+                            Start your day with purpose using our intuitive morning routine companion that helps you build lasting habits.
+                        </p>
+                        <a href="https://sunup.scatteredlabsapps.com/" class="inline-flex items-center text-green-500 hover:text-green-400">
+                            Try Now
+                            <svg class="w-4 h-4 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-24 px-6 gradient-bg">
+        <div class="container mx-auto max-w-6xl">
+            <h2 class="text-3xl font-bold mb-16 text-center">Our Approach</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="text-green-500 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Define & Research</h3>
+                    <p class="text-gray-400 text-balance">We start by deeply understanding the problem space and user needs through comprehensive research.</p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="text-green-500 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Design & Iterate</h3>
+                    <p class="text-gray-400 text-balance">We craft intuitive solutions through iterative design, constantly refining based on user feedback.</p>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8">
+                    <div class="text-green-500 mb-6">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Build & Deliver</h3>
+                    <p class="text-gray-400 text-balance">We develop robust, scalable solutions and continuously improve based on real-world usage.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-24 px-6">
+        <div class="container mx-auto max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-6">Let's Build Something Great</h2>
+            <p class="text-xl text-gray-400 mb-12 text-balance">
+                Whether you have a specific project in mind or just want to explore possibilities, we're here to help bring your ideas to life.
+            </p>
+            <a href="mailto:colin@scatteredlabsapps.com" 
+               class="inline-flex items-center px-8 py-4 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-colors">
+                Start a Conversation
+                <svg class="w-5 h-5 ml-2" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path d="M5 12h14M12 5l7 7-7 7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-800">
+        <div class="container mx-auto max-w-6xl px-6 py-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <a href="/" class="flex items-center space-x-3 mb-6">
+                        <img src="/api/placeholder/40/40" alt="Scattered Labs Logo" class="w-8 h-8">
+                        <span class="font-medium">Scattered Labs</span>
+                    </a>
+                    <p class="text-gray-400 text-sm max-w-md">
+                        Building thoughtfully designed applications that solve real-world problems and enhance everyday experiences.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-8 md:justify-end">
+                    <div>
+                        <h4 class="text-sm font-semibold mb-4">Navigation</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/" class="text-sm text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="/about" class="text-sm text-gray-400 hover:text-white transition-colors">About</a></li>
+                            <li><a href="#work" class="text-sm text-gray-400 hover:text-white transition-colors">Work</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-sm font-semibold mb-4">Legal</h4>
+                        <ul class="space-y-3">
+                            <li><a href="/privacy-policy" class="text-sm text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                            <li><a href="/terms" class="text-sm text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-sm text-gray-400">© 2025 Scattered Labs LLC. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="mailto:colin@scatteredlabsapps.com" class="text-gray-400 hover:text-white transition-colors">
+                        <span class="sr-only">Email</span>
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu functionality
+        const menuButton = document.querySelector('button');
+        const nav = document.querySelector('nav');
+        
+        menuButton?.addEventListener('click', () => {
+            nav.classList.toggle('hidden');
+            nav.classList.toggle('absolute');
+            nav.classList.toggle('top-full');
+            nav.classList.toggle('left-0');
+            nav.classList.toggle('right-0');
+            nav.classList.toggle('bg-black');
+            nav.classList.toggle('p-4');
+            nav.classList.toggle('mt-2');
+            nav.classList.toggle('rounded-lg');
+            nav.classList.toggle('shadow-lg');
+        });
+    </script>
+</body>
+</html>
