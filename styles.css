@@ -13,7 +13,6 @@
 html, body {
     font-family: "Inter", sans-serif;
     background: linear-gradient(145deg, rgba(31, 31, 31, 0.6) 0%, rgba(17, 17, 17, 0.8) 100%);
-    background-attachment: fixed;
     background-size: cover;
     color: var(--text-color);
     margin: 0;
@@ -67,7 +66,7 @@ header {
     justify-content: center;
     text-align: left;
     padding: 160px 24px;
-    background: var(--background-gradient);
+    background: inherit;
 }
 
 .hero h1 {
@@ -116,7 +115,7 @@ header {
 
 /* Gradient Background */
 .gradient-bg {
-    background: linear-gradient(135deg, rgba(20, 20, 20, 0.2) 0%, rgba(10, 10, 10, 0.3) 100%);
+    background: transparent;
 }
 
 /* Cards */
