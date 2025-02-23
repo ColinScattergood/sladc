@@ -5,88 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scattered Labs | Innovative Apps for Real Problems</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
-    <style>
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        .gradient-bg {
-            background: linear-gradient(135deg, rgba(62, 180, 137, 0.15) 0%, rgba(46, 139, 109, 0.05) 100%);
-        }
-        
-        .card-gradient {
-            background: linear-gradient(145deg, rgba(31, 31, 31, 0.6) 0%, rgba(17, 17, 17, 0.8) 100%);
-            backdrop-filter: blur(10px);
-        }
-        
-        .glass-effect {
-            background: rgba(17, 17, 17, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-bottom:none;
-        }
-        
-        .floating-element {
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .nav-link {
-            position: relative;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            bottom: -2px;
-            left: 50%;
-            background: #3EB489;
-            transition: all 0.3s ease-in-out;
-            transform: translateX(-50%);
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .subtle-pattern {
-            background-image: radial-gradient(rgba(62, 180, 137, 0.1) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .app-card {
-            transition: all 0.3s ease-in-out;
-            padding: 1rem; /* Reduce padding */
-            font-size: 0.875rem; /* Reduce text size */
-            max-width: 300px; /* Limit maximum width */
-            margin: auto; /* Center if needed */
-        }
-
-        .app-card img {
-            height: 150px; /* Reduce image size */
-            object-fit: cover;
-        }
-
-        .app-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-        }
-
-        .text-balance {
-            text-wrap: balance;
-        }
-
-        html, body {
-            background: linear-gradient(145deg, rgba(31, 31, 31, 0.6) 0%, rgba(17, 17, 17, 0.8) 100%) !important;
-            color: white;
-            min-height: 100vh;
-            width: 100%;
-        }
-
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="/logo.png">
 </head>
 <body class="text-gray-100 antialiased">
     <!-- Subtle background pattern -->
@@ -112,29 +32,13 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[75vh] pt-40 pb-16 px-6 overflow-hidden">
-        <div class="container mx-auto max-w-6xl relative z-10">
-            <div class="grid md:grid-cols-2 gap-8 justify-center">
-                <div>
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-balance mb-6">
-                        Crafting Digital Solutions for Real Problems
-                    </h1>
-                    <p class="text-xl text-gray-400 leading-relaxed mb-8 text-balance">
-                        We build thoughtfully designed apps that simplify complex challenges and enhance everyday experiences.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#work" class="px-8 py-3 bg-green-600 text-white font-medium rounded-full hover:bg-green-700 transition-colors">
-                            View Our Work
-                        </a>
-                        <a href="/about" class="px-8 py-3 rounded-full hover:bg-gray-900 transition-colors">
-                            About Us
-                        </a>
-                    </div>
-                </div>
-<!--                 <div class="relative hidden md:block">
-                    <div class="absolute inset-0 bg-gradient-to-r from-black to-transparent z-10"></div>
-                    <img src="/td-256.png" alt="App Interface Preview" class="floating-element relative z-0 rounded-2xl shadow-2xl">
-                </div> -->
+    <section class="hero">
+        <div class="container mx-auto max-w-6xl">
+            <h1>Crafting Digital Solutions for Real Problems</h1>
+            <p>We build thoughtfully designed apps that simplify complex challenges and enhance everyday experiences.</p>
+            <div class="flex space-x-4 mt-6">
+                <a href="#work" class="button button-primary">View Our Work</a>
+                <a href="/about" class="button button-secondary">About Us</a>
             </div>
         </div>
     </section>
