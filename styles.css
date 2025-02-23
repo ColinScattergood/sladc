@@ -1,18 +1,18 @@
 /* Global Styles */
 :root {
-    --background-gradient: linear-gradient(145deg, rgba(20, 20, 20, 0.85) 0%, rgba(10, 10, 10, 0.95) 100%);
+    --background-gradient: linear-gradient(145deg, rgba(20, 20, 20, 1) 0%, rgba(5, 5, 5, 0.95) 100%);
     --text-color: #e0e0e0;
     --primary-color: #3EB489; /* Mint */
     --secondary-color: #1e1e1e;
     --card-background: #121212;
     --heading-color: #ffffff;
     --border-color: rgba(255, 255, 255, 0.1);
-    --blur-effect: blur(12px);
+    --blur-effect: blur(8px);
 }
 
 html, body {
     font-family: "Inter", sans-serif;
-    background: var(--background-gradient);
+    background: var(--adient);
     color: var(--text-color);
     margin: 0;
     padding: 0;
@@ -27,7 +27,7 @@ header {
     width: 100%;
     z-index: 50;
     backdrop-filter: var(--blur-effect);
-    background: rgba(17, 17, 17, 0.85);
+    background: rgba(17, 17, 17, 0.95);
     border-bottom: 1px solid var(--border-color);
 }
 
