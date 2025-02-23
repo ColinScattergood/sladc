@@ -12,7 +12,7 @@
 
 html, body {
     font-family: "Inter", sans-serif;
-    background: linear-gradient(145deg, #121212 0%, #090909 100%);
+    background: linear-gradient(145deg, rgba(31, 31, 31, 0.6) 0%, rgba(17, 17, 17, 0.8) 100%);
     background-attachment: fixed;
     background-size: cover;
     color: var(--text-color);
