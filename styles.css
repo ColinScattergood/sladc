@@ -28,8 +28,7 @@ header {
     width: 100%;
     z-index: 50;
     backdrop-filter: var(--blur-effect);
-    background: rgba(17, 17, 17, 0.95);
-    border-bottom: 1px solid var(--border-color);
+    background: transparent;
 }
 
 .nav-link {
