@@ -65,7 +65,7 @@ header {
     justify-content: center;
     text-align: left;
     padding: 160px 24px;
-    background: inherit;
+    background: transparent;
 }
 
 .hero h1 {
@@ -151,7 +151,7 @@ header {
 /* Footer */
 footer {
     border-top: 1px solid var(--border-color);
-    background: var(--secondary-color);
+    background: transparent;
     padding: 30px;
     text-align: center;
     color: rgba(255, 255, 255, 0.5);
