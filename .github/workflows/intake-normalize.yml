@@ -1,0 +1,119 @@
+name: Intake Normalize
+
+on:
+  issues:
+    types: [opened]
+
+permissions:
+  issues: write
+
+jobs:
+  normalize:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Parse issue form fields and apply labels
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issue = context.payload.issue;
+            const body = issue.body || '';
+            const labelsToAdd = [];
+
+            // --- Work type ---
+            if (issue.labels.some(l => l.name === 'type:bug')) {
+              // Already set by template
+            } else if (issue.labels.some(l => l.name === 'type:idea')) {
+              // Already set by template
+            } else {
+              const workTypeMatch = body.match(/### Work Type\s*\n\s*(.+)/);
+              if (workTypeMatch) {
+                const val = workTypeMatch[1].trim().toLowerCase();
+                if (val.startsWith('feature'))    labelsToAdd.push('type:feature');
+                if (val.startsWith('improvement')) labelsToAdd.push('type:improvement');
+                if (val.startsWith('tech debt'))   labelsToAdd.push('type:tech-debt');
+              }
+            }
+
+            // --- Urgency → priority ---
+            const urgencyMatch = body.match(/### Urgency\s*\n\s*(.+)/);
+            if (urgencyMatch) {
+              const val = urgencyMatch[1].trim().toLowerCase();
+              if (val.startsWith('critical'))  labelsToAdd.push('priority:critical');
+              else if (val.startsWith('high')) labelsToAdd.push('priority:high');
+              else if (val.startsWith('medium')) labelsToAdd.push('priority:medium');
+              else if (val.startsWith('low'))  labelsToAdd.push('priority:low');
+            }
+
+            // --- Effort ---
+            const effortMatch = body.match(/### Rough Effort Guess\s*\n\s*(.+)/);
+            if (effortMatch) {
+              const val = effortMatch[1].trim().toUpperCase();
+              if (val.startsWith('XS'))      labelsToAdd.push('effort:xs');
+              else if (val.startsWith('S'))   labelsToAdd.push('effort:s');
+              else if (val.startsWith('M'))   labelsToAdd.push('effort:m');
+              else if (val.startsWith('L'))   labelsToAdd.push('effort:l');
+              else if (val.startsWith('XL'))  labelsToAdd.push('effort:xl');
+            }
+
+            // --- Source ---
+            const sourceMatch = body.match(/### Source\s*\n\s*(.+)/);
+            if (sourceMatch) {
+              const val = sourceMatch[1].trim().toLowerCase();
+              if (val.startsWith('owner'))         labelsToAdd.push('source:owner');
+              else if (val.includes('user'))        labelsToAdd.push('source:user');
+              else if (val.includes('app store'))   labelsToAdd.push('source:app-store');
+              else if (val.includes('tester'))      labelsToAdd.push('source:tester');
+              else if (val.includes('agent'))       labelsToAdd.push('source:agent');
+            }
+
+            // --- Potential Impact (ideas) → rough priority ---
+            if (!urgencyMatch) {
+              const impactMatch = body.match(/### Potential Impact\s*\n\s*(.+)/);
+              if (impactMatch) {
+                const val = impactMatch[1].trim().toLowerCase();
+                if (val === 'high')   labelsToAdd.push('priority:high');
+                else if (val === 'medium') labelsToAdd.push('priority:medium');
+                else if (val === 'low')    labelsToAdd.push('priority:low');
+              }
+            }
+
+            // --- Category (ideas) ---
+            const catMatch = body.match(/### Category\s*\n\s*(.+)/);
+            if (catMatch) {
+              const val = catMatch[1].trim().toLowerCase();
+              if (val.includes('feedback'))  labelsToAdd.push('type:feedback');
+            }
+
+            // --- Check for missing required context ---
+            const desiredOutcome = body.match(/### Desired Outcome[^#]*\n\s*(.+)/);
+            const problemDesc = body.match(/### Problem Description[^#]*\n\s*(.+)/) ||
+                                body.match(/### Problem or Opportunity[^#]*\n\s*(.+)/);
+
+            const hasGaps = !desiredOutcome || !problemDesc ||
+                            desiredOutcome[1].trim() === '_No response_' ||
+                            problemDesc[1].trim() === '_No response_';
+
+            if (hasGaps) {
+              labelsToAdd.push('status:needs-info');
+            }
+
+            if (labelsToAdd.length > 0) {
+              await github.rest.issues.addLabels({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: issue.number,
+                labels: labelsToAdd,
+              });
+            }
+
+            // Post a triage-pending notice
+            const triageNotice = hasGaps
+              ? '> **Intake:** This item is missing some context (problem description or desired outcome). Labeled `needs-info` — please add detail so it can be triaged.'
+              : '> **Intake:** Normalized and ready for triage.';
+
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issue.number,
+              body: triageNotice,
+            });
